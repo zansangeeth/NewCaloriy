@@ -12,7 +12,11 @@ class SearchActivity : AppCompatActivity() {
 
         btnGetMeals.setOnClickListener {
             val mealsIntent = Intent(this, MainActivity::class.java)
+            val targetCalories = etCalories.text.toString()
+            mealsIntent.putExtra("targetCalories", targetCalories)
             startActivity(mealsIntent)
         }
+
+
     }
 }

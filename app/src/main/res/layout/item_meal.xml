@@ -26,16 +26,52 @@
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_gravity="center"
+                android:paddingTop="10dp"/>
 
             <TextView
-                android:id="@+id/tvUrl"
+                android:id="@+id/tvReadyInMinutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:autoLink="web"
                 android:text="TextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvMealTitle" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/tvServings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/btnGetLink"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="View Recipe"
+                android:layout_marginTop="10dp"
+                android:autoLink="web"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                />
+<!--            <TextView-->
+<!--                android:id="@+id/tvUrl"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:autoLink="web"-->
+<!--                android:text="TextView"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tvMealTitle"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="10dp"/>-->
+
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
