@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Calories in kcal"
                 android:layout_marginTop="10dp"
+
                 >
 
                 <com.google.android.material.textfield.TextInputEditText

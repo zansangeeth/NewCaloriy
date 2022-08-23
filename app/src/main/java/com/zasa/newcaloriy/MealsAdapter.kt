@@ -14,8 +14,19 @@ import androidx.recyclerview.widget.RecyclerView
  */
 class MealsAdapter(val context: Context, private val meals : List<Meal>) : RecyclerView.Adapter<MealsAdapter.ViewHolder>() {
 
+    lateinit var mListener : onItemClickListner
+
+    interface onItemClickListner{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListner){
+        mListener = listener
+
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_meal, parent,false))
+        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_meal, parent,false), mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -25,12 +36,18 @@ class MealsAdapter(val context: Context, private val meals : List<Meal>) : Recyc
 
     override fun getItemCount() = meals.size
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(itemView: View, listener: onItemClickListner) : RecyclerView.ViewHolder(itemView){
         fun bindMeal(meal: Meal) {
             itemView.findViewById<TextView>(R.id.tvMealTitle).text = meal.title
             itemView.findViewById<Button>(R.id.btnGetLink).isClickable = true
             itemView.findViewById<TextView>(R.id.tvReadyInMinutes).text = "Ready in Minutes : ${meal.readyInMinutes}"
             itemView.findViewById<TextView>(R.id.tvServings).text = "Servings can be ${meal.servings} Members"
+        }
+
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
         }
 
     }
