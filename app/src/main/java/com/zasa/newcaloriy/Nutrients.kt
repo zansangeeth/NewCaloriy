@@ -6,3 +6,4 @@ data class Nutrients(
     val fat: Double,
     val protein: Double
 )
+

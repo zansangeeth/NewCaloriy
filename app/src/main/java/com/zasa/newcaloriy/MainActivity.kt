@@ -2,6 +2,7 @@ package com.zasa.newcaloriy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.JsonReader
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,6 +10,10 @@ import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.item_meal.*
@@ -64,6 +69,7 @@ class MainActivity : AppCompatActivity() {
                             adapter = mealAdapter
                             meals.addAll(body.meals)
                             mealAdapter.notifyDataSetChanged()
+
                         }
                         shimmer_view_container.stopShimmer()
                         shimmer_view_container.visibility = View.GONE
