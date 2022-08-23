@@ -3,12 +3,15 @@ package com.zasa.newcaloriy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.item_meal.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,8 +35,6 @@ class MainActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
 
-
-
         val meals = mutableListOf<Meal>()
         val mealAdapter = MealsAdapter(this, meals)
 
@@ -51,27 +52,24 @@ class MainActivity : AppCompatActivity() {
                     call: Call<SpoonacularData>,
                     response: Response<SpoonacularData>
                 ) {
+
                     val body = response.body()
                     if (body == null) {
                         Log.w(TAG, "failed to fetch data..")
                         return
                     }else{
                         Log.i(TAG, "$response")
-//                        rvMeals.apply {
-//                            layoutManager = LinearLayoutManager(this@MainActivity)
-//                            adapter = mealAdapter
-//                            meals.addAll(body.meals)
-//                            mealAdapter.notifyDataSetChanged()
-//                        }
-                        val mealInfo : SpoonacularData = response.body()!!
-                        meals.addAll(mealInfo.meals)
-                        rvMeals.layoutManager = LinearLayoutManager(this@MainActivity)
-                        rvMeals.adapter = mealAdapter
-                        mealAdapter.notifyDataSetChanged()
-
+                        rvMeals.apply {
+                            layoutManager = LinearLayoutManager(this@MainActivity)
+                            adapter = mealAdapter
+                            meals.addAll(body.meals)
+                            mealAdapter.notifyDataSetChanged()
+                        }
+                        shimmer_view_container.stopShimmer()
+                        shimmer_view_container.visibility = View.GONE
                     }
-
                 }
+
 
                 override fun onFailure(call: Call<SpoonacularData>, t: Throwable) {
                     Log.i(TAG, "$t")

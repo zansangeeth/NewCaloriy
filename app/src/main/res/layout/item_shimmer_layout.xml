@@ -28,6 +28,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:paddingTop="10dp"
+                android:textColor="@color/cardview_shadow_end_color"
                 />
 
             <TextView
@@ -38,7 +39,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:textColor="@color/cardview_shadow_end_color"/>
 
             <TextView
                 android:id="@+id/tvServings"
@@ -48,7 +50,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:textColor="@color/cardview_shadow_end_color"/>
 
             <Button
                 android:id="@+id/btnGetLink"
@@ -59,6 +62,8 @@
                 android:autoLink="web"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
+                android:textColor="@color/cardview_shadow_end_color"
+                android:background="@color/cardview_shadow_end_color"
                 />
 <!--            <TextView-->
 <!--                android:id="@+id/tvUrl"-->

@@ -1,5 +1,6 @@
 package com.zasa.newcaloriy
 
+import com.google.gson.JsonElement
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -14,6 +15,8 @@ interface SpoonacularService {
     fun getMeals(
         @Query("apiKey") apiKey: String,
         @Query("timeFrame") timeFrame : String,
-        @Query("targetCalories") targetCalories : String
+        @Query("targetCalories") targetCalories : String,
     ) : retrofit2.Call<SpoonacularData>
+
+
 }
