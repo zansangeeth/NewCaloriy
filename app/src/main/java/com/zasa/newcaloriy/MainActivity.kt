@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         mAdView.loadAd(adRequest)
 
         val meals = mutableListOf<Meal>()
+
         val mealAdapter = MealsAdapter(this, meals)
 
         val retrofit =
@@ -69,8 +70,13 @@ class MainActivity : AppCompatActivity() {
                             adapter = mealAdapter
                             meals.addAll(body.meals)
                             mealAdapter.notifyDataSetChanged()
-
                         }
+
+                        tvCalories.text = body.nutrients.calories.toString()
+                        tvCarbohydrates.text = body.nutrients.carbohydrates.toString()
+                        tvFat.text = body.nutrients.fat.toString()
+                        tvProtein.text = body.nutrients.protein.toString()
+
                         shimmer_view_container.stopShimmer()
                         shimmer_view_container.visibility = View.GONE
                     }
