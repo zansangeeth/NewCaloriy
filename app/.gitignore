@@ -1,3 +1,2 @@
 /build
-/src/main/java/com/zasa/newcaloriy/Constants/BASE_URL
-/src/main/java/com/zasa/newcaloriy/Constants/API_KEY
+/src/main/java/com/zasa/newcaloriy/Constants.kt
