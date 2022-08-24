@@ -23,7 +23,7 @@ class SearchActivity : AppCompatActivity() {
                 mealsIntent.putExtra("targetCalories", targetCalories)
                 startActivity(mealsIntent)
             }
-                
+
 
 
         }

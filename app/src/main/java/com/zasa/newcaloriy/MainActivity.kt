@@ -1,5 +1,6 @@
 package com.zasa.newcaloriy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -65,10 +66,10 @@ class MainActivity : AppCompatActivity() {
                             mealAdapter.notifyDataSetChanged()
                         }
 
-                        tvCalories.text = "Calories : ${body.nutrients.calories.toString()}"
-                        tvCarbohydrates.text = "Carbohydrates : ${body.nutrients.carbohydrates.toString()}"
-                        tvFat.text = "Fat : ${body.nutrients.fat.toString()}"
-                        tvProtein.text = "Protein : ${body.nutrients.protein.toString()}"
+                        tvCalories.text = "Calories : ${body.nutrients.calories}"
+                        tvCarbohydrates.text = "Carbohydrates : ${body.nutrients.carbohydrates}"
+                        tvFat.text = "Fat : ${body.nutrients.fat}"
+                        tvProtein.text = "Protein : ${body.nutrients.protein}"
 
                         shimmer_view_container.stopShimmer()
                         shimmer_view_container.visibility = View.GONE
@@ -76,7 +77,10 @@ class MainActivity : AppCompatActivity() {
                         mealAdapter.setOnItemClickListener(object : MealsAdapter.onItemClickListner{
                             override fun onItemClick(position: Int) {
                                 Toast.makeText(this@MainActivity, "you clicked $position", Toast.LENGTH_SHORT).show()
-
+                                val webViewIntent = Intent(this@MainActivity, WebActivity::class.java)
+                                webViewIntent.putExtra("title", meals[position].title)
+                                webViewIntent.putExtra("sourceUrl", meals[position].sourceUrl)
+                                startActivity(webViewIntent)
                             }
 
                         })
