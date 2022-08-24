@@ -56,5 +56,12 @@ dependencies {
     //Shimmer effect
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
+    //lottie
+    implementation 'androidx.core:core-splashscreen:1.0.0'
+    def lottieVersion = "5.2.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.10'
+
 
 }

@@ -11,6 +11,7 @@ class SearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_NewCaloriy)
         setContentView(R.layout.activity_search)
 
         btnGetMeals.setOnClickListener {

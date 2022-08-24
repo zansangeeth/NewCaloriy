@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.item_meal.*
 class WebActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_NewCaloriy)
         setContentView(R.layout.activity_web)
 
         val bundle : Bundle? =intent.extras

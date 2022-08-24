@@ -61,7 +61,6 @@
                 android:layout_marginBottom="10dp"
                 android:autoLink="web"
                 android:text="View Recipe"
-                app:icon="@drawable/ic_meal_svgrepo_com"
                 app:iconGravity="textStart" />
             <!--            <TextView-->
             <!--                android:id="@+id/tvUrl"-->
