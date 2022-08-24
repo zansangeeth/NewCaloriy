@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.zasa.newcaloriy.Constants.API_KEY
+import com.zasa.newcaloriy.Constants.BASE_URL
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,9 +19,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val BASE_URL = "https://api.spoonacular.com/"
 private const val TAG = "MainActivity"
-private const val API_KEY = "5daeba7d6f3045b3affa64e67a2329c3"
 
 class MainActivity : AppCompatActivity() {
     lateinit var mAdView: AdView
