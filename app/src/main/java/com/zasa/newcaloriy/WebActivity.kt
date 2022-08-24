@@ -1,13 +1,9 @@
 package com.zasa.newcaloriy
 
-import android.app.ProgressDialog
 import android.os.Bundle
-import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_web.*
-import kotlinx.android.synthetic.main.item_meal.*
 
 class WebActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
