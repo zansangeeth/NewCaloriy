@@ -1,9 +1,10 @@
-package com.zasa.newcaloriy
+package com.zasa.newcaloriy.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.zasa.newcaloriy.R
 import kotlinx.android.synthetic.main.activity_search.*
 
 private const val TAG = "SearchActivity"

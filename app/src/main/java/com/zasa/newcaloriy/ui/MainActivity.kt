@@ -1,4 +1,4 @@
-package com.zasa.newcaloriy
+package com.zasa.newcaloriy.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,8 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
-import com.zasa.newcaloriy.Constants.API_KEY
-import com.zasa.newcaloriy.Constants.BASE_URL
+import com.zasa.newcaloriy.*
+import com.zasa.newcaloriy.adapter.MealsAdapter
+import com.zasa.newcaloriy.api.SpoonacularService
+import com.zasa.newcaloriy.response.Meal
+import com.zasa.newcaloriy.response.SpoonacularData
+import com.zasa.newcaloriy.utils.Constants.API_KEY
+import com.zasa.newcaloriy.utils.Constants.BASE_URL
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -75,7 +80,8 @@ class MainActivity : AppCompatActivity() {
                         shimmer_view_container.stopShimmer()
                         shimmer_view_container.visibility = View.GONE
 
-                        mealAdapter.setOnItemClickListener(object : MealsAdapter.onItemClickListner{
+                        mealAdapter.setOnItemClickListener(object :
+                            MealsAdapter.onItemClickListner {
                             override fun onItemClick(position: Int) {
                                 Toast.makeText(this@MainActivity, "you clicked $position", Toast.LENGTH_SHORT).show()
                                 val webViewIntent = Intent(this@MainActivity, WebActivity::class.java)

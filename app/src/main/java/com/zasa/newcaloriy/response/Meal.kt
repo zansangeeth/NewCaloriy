@@ -1,4 +1,4 @@
-package com.zasa.newcaloriy
+package com.zasa.newcaloriy.response
 
 data class Meal(
     val id: Int,

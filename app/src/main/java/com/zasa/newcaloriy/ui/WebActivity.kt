@@ -1,8 +1,9 @@
-package com.zasa.newcaloriy
+package com.zasa.newcaloriy.ui
 
 import android.os.Bundle
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
+import com.zasa.newcaloriy.R
 import kotlinx.android.synthetic.main.activity_web.*
 
 class WebActivity : AppCompatActivity() {

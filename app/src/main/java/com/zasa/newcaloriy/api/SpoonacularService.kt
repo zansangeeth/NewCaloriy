@@ -1,5 +1,6 @@
-package com.zasa.newcaloriy
+package com.zasa.newcaloriy.api
 
+import com.zasa.newcaloriy.response.SpoonacularData
 import retrofit2.http.GET
 import retrofit2.http.Query
 
