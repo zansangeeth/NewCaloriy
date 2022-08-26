@@ -4,7 +4,7 @@
  
 Sangeeth Amirthanathan
 
-**Caloriy** is the encoded string generater using different algorithms 
+**Caloriy** is an App that will suggest daily meals with users preferenece (How much of calories they want to gain for a day ?)
 
 Time spent: **1** day spent in total
 
