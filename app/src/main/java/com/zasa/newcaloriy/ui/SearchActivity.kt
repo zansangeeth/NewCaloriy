@@ -26,8 +26,6 @@ class SearchActivity : AppCompatActivity() {
                 startActivity(mealsIntent)
             }
 
-
-
         }
 
     }

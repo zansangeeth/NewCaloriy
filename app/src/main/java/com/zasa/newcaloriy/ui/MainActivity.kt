@@ -1,5 +1,6 @@
 package com.zasa.newcaloriy.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +19,7 @@ import com.zasa.newcaloriy.response.SpoonacularData
 import com.zasa.newcaloriy.utils.Constants.API_KEY
 import com.zasa.newcaloriy.utils.Constants.BASE_URL
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_meal.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -54,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         spoonacularService.getMeals("$API_KEY", "day", "$targetCalories")
             .enqueue(object : Callback<SpoonacularData> {
+                @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
                 override fun onResponse(
                     call: Call<SpoonacularData>,
                     response: Response<SpoonacularData>
@@ -80,18 +83,35 @@ class MainActivity : AppCompatActivity() {
                         shimmer_view_container.stopShimmer()
                         shimmer_view_container.visibility = View.GONE
 
+
                         mealAdapter.setOnItemClickListener(object :
                             MealsAdapter.onItemClickListner {
                             override fun onItemClick(position: Int) {
-                                Toast.makeText(this@MainActivity, "you clicked $position", Toast.LENGTH_SHORT).show()
-                                val webViewIntent = Intent(this@MainActivity, WebActivity::class.java)
+                                Toast.makeText(
+                                    this@MainActivity,
+                                    "you clicked $position",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                val webViewIntent =
+                                    Intent(this@MainActivity, WebActivity::class.java)
                                 webViewIntent.putExtra("title", meals[position].title)
                                 webViewIntent.putExtra("sourceUrl", meals[position].sourceUrl)
                                 startActivity(webViewIntent)
                             }
-
                         })
+
+//                        mealAdapter.setOnBtnClickListener(object : MealsAdapter.onButtonClicked{
+//                            override fun onButtonItemClicked(position: Int) {
+//                                Toast.makeText(
+//                                    this@MainActivity,
+//                                    "you clicked the button $position",
+//                                    Toast.LENGTH_SHORT
+//                                ).show()
+//                            }
+//                        })
+
                     }
+
                 }
 
 
@@ -102,4 +122,6 @@ class MainActivity : AppCompatActivity() {
             })
 
     }
+
+
 }

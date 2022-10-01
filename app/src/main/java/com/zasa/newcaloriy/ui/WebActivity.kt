@@ -18,16 +18,6 @@ class WebActivity : AppCompatActivity() {
 
         tvMealWebActivity.text = title
 
-//        wbMeal.webViewClient = object : WebViewClient(){
-//            override fun shouldOverrideUrlLoading(
-//                view: WebView?,
-//                request: WebResourceRequest?
-//            ): Boolean {
-//                view?.loadUrl(webView.toString())
-//                return super.shouldOverrideUrlLoading(view, request)
-//            }
-//        }
-
         wbMeal.webViewClient = WebViewClient()
         wbMeal.loadUrl(webView.toString())
         wbMeal.settings.javaScriptEnabled = true
