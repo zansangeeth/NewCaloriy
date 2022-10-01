@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zasa.newcaloriy.R
 import com.zasa.newcaloriy.response.Meal
 import com.zasa.newcaloriy.ui.WebActivity
+import kotlinx.android.synthetic.main.activity_search.*
 
 /**
  **@Project -> NewCaloriy
@@ -43,6 +44,7 @@ class MealsAdapter(val context: Context, private val meals : List<Meal>) : Recyc
             intent.putExtra("title", meals[position].title)
             intent.putExtra("sourceUrl", meals[position].sourceUrl)
             context.startActivity(intent)
+            holder.button.isEnabled = false
         }
 
     }

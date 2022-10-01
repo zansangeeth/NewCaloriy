@@ -25,6 +25,7 @@ class SearchActivity : AppCompatActivity() {
                 val mealsIntent = Intent(this, MainActivity::class.java)
                 mealsIntent.putExtra("targetCalories", targetCalories)
                 startActivity(mealsIntent)
+                btnGetMeals.isEnabled = false
             } else {
                 Toast.makeText(
                     this,
