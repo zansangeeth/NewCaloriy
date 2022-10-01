@@ -19,7 +19,6 @@ import com.zasa.newcaloriy.response.SpoonacularData
 import com.zasa.newcaloriy.utils.Constants.API_KEY
 import com.zasa.newcaloriy.utils.Constants.BASE_URL
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_meal.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

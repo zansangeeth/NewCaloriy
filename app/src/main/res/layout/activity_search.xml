@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Welcome to Caloriy"
+                android:text="@string/welcome_to_caloriy"
                 android:textColor="#363A43"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="16dp"
-                android:text="How much of calories you need to gain?"
+                android:text="@string/how_much_of_calories_you_need_to_gain"
                 android:textColor="#7A8089"
                 android:textSize="16sp" />
 
@@ -51,7 +51,7 @@
                 android:id="@+id/textField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Calories in kcal"
+                android:hint="@string/calories_in_kcal"
                 android:layout_marginTop="10dp"
 
                 >
@@ -68,7 +68,7 @@
                 android:id="@+id/btnGetMeals"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Show Recipes"
+                android:text="@string/show_recipes"
                 android:layout_marginTop="20dp"
                 app:icon="@drawable/restaurant"
                 style="@style/Widget.Material3.Button.Icon"

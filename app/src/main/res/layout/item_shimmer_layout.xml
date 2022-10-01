@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="3dp">
@@ -22,7 +21,7 @@
                 android:id="@+id/tvMealTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_gravity="center"
@@ -35,7 +34,7 @@
                 android:id="@+id/tvReadyInMinutes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_gravity="center"
@@ -46,7 +45,7 @@
                 android:id="@+id/tvServings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="@string/textview"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_gravity="center"
@@ -57,7 +56,7 @@
                 android:id="@+id/btnGetLink"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="View Recipe"
+                android:text="@string/view_recipe"
                 android:layout_marginTop="10dp"
                 android:autoLink="web"
                 android:layout_marginBottom="10dp"
@@ -65,17 +64,6 @@
                 android:textColor="@color/cardview_shadow_end_color"
                 android:background="@color/cardview_shadow_end_color"
                 />
-<!--            <TextView-->
-<!--                android:id="@+id/tvUrl"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:autoLink="web"-->
-<!--                android:text="TextView"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/tvMealTitle"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginTop="10dp"/>-->
-
 
         </LinearLayout>
 

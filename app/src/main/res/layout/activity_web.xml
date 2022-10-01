@@ -12,11 +12,11 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Meal Item"
+        android:text="@string/meal_item"
         android:textColor="@android:color/black"
         android:gravity="center"
         android:layout_marginTop="10dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:fontFamily="@font/roboto_bold"
         android:layout_marginBottom="10dp"/>
 

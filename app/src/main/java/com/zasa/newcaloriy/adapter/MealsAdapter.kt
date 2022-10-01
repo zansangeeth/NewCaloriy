@@ -1,5 +1,6 @@
 package com.zasa.newcaloriy.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -11,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zasa.newcaloriy.R
 import com.zasa.newcaloriy.response.Meal
 import com.zasa.newcaloriy.ui.WebActivity
-import kotlinx.android.synthetic.main.activity_search.*
 
 /**
  **@Project -> NewCaloriy
@@ -55,6 +55,7 @@ class MealsAdapter(val context: Context, private val meals : List<Meal>) : Recyc
         itemView: View,
         listener: onItemClickListner,
         ) : RecyclerView.ViewHolder(itemView){
+        @SuppressLint("SetTextI18n")
         fun bindMeal(meal: Meal) {
             itemView.findViewById<TextView>(R.id.tvMealTitle).text = meal.title
             itemView.findViewById<TextView>(R.id.tvReadyInMinutes).text = "Ready in Minutes : ${meal.readyInMinutes}"

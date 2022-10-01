@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">NewCaloriy</string>
+    <string name="meals">Meals</string>
+    <string name="welcome_to_caloriy">Welcome to Caloriy</string>
+    <string name="how_much_of_calories_you_need_to_gain">How much of calories you need to gain?</string>
+    <string name="calories_in_kcal">Calories in kcal</string>
+    <string name="show_recipes">Show Recipes</string>
+    <string name="meal_item">Meal Item</string>
+    <string name="textview">TextView</string>
+    <string name="view_recipe">View Recipe</string>
 </resources>

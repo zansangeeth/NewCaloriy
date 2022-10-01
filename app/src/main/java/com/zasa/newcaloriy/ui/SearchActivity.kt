@@ -7,8 +7,6 @@ import android.widget.Toast
 import com.zasa.newcaloriy.R
 import kotlinx.android.synthetic.main.activity_search.*
 
-private const val TAG = "SearchActivity"
-
 class SearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
