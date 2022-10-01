@@ -8,6 +8,7 @@ import com.zasa.newcaloriy.R
 import kotlinx.android.synthetic.main.activity_search.*
 
 private const val TAG = "SearchActivity"
+
 class SearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,12 +19,18 @@ class SearchActivity : AppCompatActivity() {
         btnGetMeals.setOnClickListener {
 
             val targetCalories = etCalories.text.toString()
-            if (targetCalories.isNullOrEmpty()){
+            if (targetCalories.isNullOrEmpty()) {
                 Toast.makeText(this, "Please enter the calories amount", Toast.LENGTH_SHORT).show()
-            }else{
+            } else if (targetCalories.toInt() in 1000..3000) {
                 val mealsIntent = Intent(this, MainActivity::class.java)
                 mealsIntent.putExtra("targetCalories", targetCalories)
                 startActivity(mealsIntent)
+            } else {
+                Toast.makeText(
+                    this,
+                    "Calorie Amount per day between 1000 to 3000",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         }
