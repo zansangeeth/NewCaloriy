@@ -18,7 +18,9 @@ import com.zasa.newcaloriy.response.Meal
 import com.zasa.newcaloriy.response.SpoonacularData
 import com.zasa.newcaloriy.utils.Constants.API_KEY
 import com.zasa.newcaloriy.utils.Constants.BASE_URL
+import com.zasa.newcaloriy.utils.RetrofitCall
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_search.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,6 +31,10 @@ private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
     lateinit var mAdView: AdView
+
+    val meals = mutableListOf<Meal>()
+
+    val mealAdapter = MealsAdapter(this, meals)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,15 +47,9 @@ class MainActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
 
-        val meals = mutableListOf<Meal>()
 
-        val mealAdapter = MealsAdapter(this, meals)
 
-        val retrofit =
-            Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
-                .build()
-
-        val spoonacularService = retrofit.create(SpoonacularService::class.java)
+        val spoonacularService = RetrofitCall.retrofit.create(SpoonacularService::class.java)
         val targetCalories = intent.getStringExtra("targetCalories")
 
 
@@ -73,7 +73,6 @@ class MainActivity : AppCompatActivity() {
                             meals.addAll(body.meals)
                             mealAdapter.notifyDataSetChanged()
                         }
-
                         tvCalories.text = "Calories : ${body.nutrients.calories}"
                         tvCarbohydrates.text = "Carbohydrates : ${body.nutrients.carbohydrates}"
                         tvFat.text = "Fat : ${body.nutrients.fat}"
@@ -98,17 +97,6 @@ class MainActivity : AppCompatActivity() {
                                 startActivity(webViewIntent)
                             }
                         })
-
-//                        mealAdapter.setOnBtnClickListener(object : MealsAdapter.onButtonClicked{
-//                            override fun onButtonItemClicked(position: Int) {
-//                                Toast.makeText(
-//                                    this@MainActivity,
-//                                    "you clicked the button $position",
-//                                    Toast.LENGTH_SHORT
-//                                ).show()
-//                            }
-//                        })
-
                     }
 
                 }
@@ -118,8 +106,16 @@ class MainActivity : AppCompatActivity() {
                     Log.i(TAG, "$t")
                 }
 
+
             })
 
+    }
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this,SearchActivity::class.java))
+        finish()
     }
 
 

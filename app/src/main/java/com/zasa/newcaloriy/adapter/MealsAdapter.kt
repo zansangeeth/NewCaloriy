@@ -44,7 +44,7 @@ class MealsAdapter(val context: Context, private val meals : List<Meal>) : Recyc
             intent.putExtra("title", meals[position].title)
             intent.putExtra("sourceUrl", meals[position].sourceUrl)
             context.startActivity(intent)
-            holder.button.isEnabled = false
+
         }
 
     }

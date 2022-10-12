@@ -1,10 +1,14 @@
 package com.zasa.newcaloriy.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import com.zasa.newcaloriy.R
+import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.activity_web.*
+import kotlinx.android.synthetic.main.item_meal.*
 
 class WebActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,4 +28,6 @@ class WebActivity : AppCompatActivity() {
         wbMeal.settings.setSupportZoom(true)
 
     }
+
+
 }
