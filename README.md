@@ -26,23 +26,23 @@ The following flow illustrates the core MVVM Pattern.
 
 The following **required** functionality is completed:
 
-* [ ] Splash Screen
-* [ ] Activities
-* [ ] Shimmer Animations - Facebook
-* [ ] View Holder
-* [ ] Lifecycle
-* [ ] Activity Navigations
-* [ ] Data tranfer within Activities
-* [ ] Webview
-* [ ] Retrofit
-* [ ] Recycler View
-* [ ] Google Ads
+* [x] Splash Screen
+* [x] Activities
+* [x] Shimmer Animations - Facebook
+* [x] View Holder
+* [x] Lifecycle
+* [x] Activity Navigations
+* [x] Data tranfer within Activities
+* [x] Webview
+* [x] Retrofit
+* [x] Recycler View
+* [x] Google Ads
 
 The following **extensions** are implemented:
 
-* [ ] User can enter the calorie value
-* [ ] User can get recipies informations 
-* [ ] User can see the web view of specific recipie item in app.
+* [x] User can enter the calorie value
+* [x] User can get recipies informations 
+* [x] User can see the web view of specific recipie item in app.
 
 
 ## Video Walkthrough
@@ -61,13 +61,13 @@ Imaages | ![Screenshot_20220822-111342](https://user-images.githubusercontent.co
 
 Describe any challenges encountered while building the app.
 
-* [ ] Navigating Activities
-* [ ] Passing data between Activities
-* [ ] Dealing with build.gradle
-* [ ] Designing Application in XML
-* [ ] Design UI
-* [ ] Deal with retrofit
-* [ ] Deal with data classed and JSON objects classws
+* [x] Navigating Activities
+* [x] Passing data between Activities
+* [x] Dealing with build.gradle
+* [x] Designing Application in XML
+* [x] Design UI
+* [x] Deal with retrofit
+* [x] Deal with data classed and JSON objects classws
 
 
 ## License
