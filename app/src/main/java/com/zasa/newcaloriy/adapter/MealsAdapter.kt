@@ -33,6 +33,8 @@ class MealsAdapter(val context: Context, private val meals : List<Meal>) : Recyc
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        var mListener : onItemClickListner? = null
+        // Pass mListener directly (it is now nullable)
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_meal, parent,false), mListener)
     }
 
@@ -53,7 +55,7 @@ class MealsAdapter(val context: Context, private val meals : List<Meal>) : Recyc
 
     inner class ViewHolder(
         itemView: View,
-        listener: onItemClickListner,
+        listener: onItemClickListner?,
         ) : RecyclerView.ViewHolder(itemView){
         @SuppressLint("SetTextI18n")
         fun bindMeal(meal: Meal) {
@@ -66,9 +68,14 @@ class MealsAdapter(val context: Context, private val meals : List<Meal>) : Recyc
 
         init {
             itemView.setOnClickListener {
-                listener.onItemClick(adapterPosition)
+                // adapterPosition is deprecated, use bindingAdapterPosition instead
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    listener!!.onItemClick(position)
+                }
             }
         }
+
     }
 }
 

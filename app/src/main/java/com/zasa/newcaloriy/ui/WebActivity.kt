@@ -6,26 +6,27 @@ import android.view.View
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import com.zasa.newcaloriy.R
-import kotlinx.android.synthetic.main.activity_search.*
-import kotlinx.android.synthetic.main.activity_web.*
-import kotlinx.android.synthetic.main.item_meal.*
+import com.zasa.newcaloriy.databinding.ActivitySearchBinding
+import com.zasa.newcaloriy.databinding.ActivityWebBinding
 
 class WebActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityWebBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityWebBinding.inflate(layoutInflater)
         setTheme(R.style.Theme_NewCaloriy)
-        setContentView(R.layout.activity_web)
+        setContentView(binding.root)
 
         val bundle : Bundle? =intent.extras
         val title = bundle!!.getString("title")
         val webView = bundle.getString("sourceUrl")
 
-        tvMealWebActivity.text = title
+        binding.tvMealWebActivity.text = title
 
-        wbMeal.webViewClient = WebViewClient()
-        wbMeal.loadUrl(webView.toString())
-        wbMeal.settings.javaScriptEnabled = true
-        wbMeal.settings.setSupportZoom(true)
+        binding.wbMeal.webViewClient = WebViewClient()
+        binding.wbMeal.loadUrl(webView.toString())
+        binding.wbMeal.settings.javaScriptEnabled = true
+        binding.wbMeal.settings.setSupportZoom(true)
 
     }
 

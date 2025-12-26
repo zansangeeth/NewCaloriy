@@ -14,22 +14,21 @@ import com.google.android.gms.ads.MobileAds
 import com.zasa.newcaloriy.*
 import com.zasa.newcaloriy.adapter.MealsAdapter
 import com.zasa.newcaloriy.api.SpoonacularService
+import com.zasa.newcaloriy.databinding.ActivityMainBinding
 import com.zasa.newcaloriy.response.Meal
 import com.zasa.newcaloriy.response.SpoonacularData
 import com.zasa.newcaloriy.utils.Constants.API_KEY
-import com.zasa.newcaloriy.utils.Constants.BASE_URL
 import com.zasa.newcaloriy.utils.RetrofitCall
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_search.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     lateinit var mAdView: AdView
 
     val meals = mutableListOf<Meal>()
@@ -38,8 +37,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
         setTheme(R.style.Theme_NewCaloriy)
-        setContentView(R.layout.activity_main)
+
+//        setContentView(R.layout.activity_main)
 
         MobileAds.initialize(this) {}
 
@@ -67,19 +71,19 @@ class MainActivity : AppCompatActivity() {
                         return
                     } else {
                         Log.i(TAG, "$response")
-                        rvMeals.apply {
+                        binding.rvMeals.apply {
                             layoutManager = LinearLayoutManager(this@MainActivity)
                             adapter = mealAdapter
                             meals.addAll(body.meals)
                             mealAdapter.notifyDataSetChanged()
                         }
-                        tvCalories.text = "Calories : ${body.nutrients.calories}"
-                        tvCarbohydrates.text = "Carbohydrates : ${body.nutrients.carbohydrates}"
-                        tvFat.text = "Fat : ${body.nutrients.fat}"
-                        tvProtein.text = "Protein : ${body.nutrients.protein}"
+                        binding.tvCalories.text = "Calories : ${body.nutrients.calories}"
+                        binding.tvCarbohydrates.text = "Carbohydrates : ${body.nutrients.carbohydrates}"
+                        binding.tvFat.text = "Fat : ${body.nutrients.fat}"
+                        binding.tvProtein.text = "Protein : ${body.nutrients.protein}"
 
-                        shimmer_view_container.stopShimmer()
-                        shimmer_view_container.visibility = View.GONE
+                        binding.shimmerViewContainer.stopShimmer()
+                        binding.shimmerViewContainer.visibility = View.GONE
 
 
                         mealAdapter.setOnItemClickListener(object :
@@ -109,14 +113,17 @@ class MainActivity : AppCompatActivity() {
 
             })
 
+        // Add this inside onCreate()
+        onBackPressedDispatcher.addCallback(this, object : androidx.activity.OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Your custom back logic
+                startActivity(Intent(this@MainActivity, SearchActivity::class.java))
+                finish()
+            }
+        })
+
     }
 
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        startActivity(Intent(this,SearchActivity::class.java))
-        finish()
-    }
 
 
 }

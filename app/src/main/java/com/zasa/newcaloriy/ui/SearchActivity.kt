@@ -5,25 +5,29 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.zasa.newcaloriy.R
-import kotlinx.android.synthetic.main.activity_search.*
+import com.zasa.newcaloriy.databinding.ActivitySearchBinding
+
 
 class SearchActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivitySearchBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivitySearchBinding.inflate(layoutInflater)
+
         setTheme(R.style.Theme_NewCaloriy)
-        setContentView(R.layout.activity_search)
+        setContentView(binding.root)
 
-        btnGetMeals.setOnClickListener {
+        binding.btnGetMeals.setOnClickListener {
 
-            val targetCalories = etCalories.text.toString()
+            val targetCalories = binding.etCalories.text.toString()
             if (targetCalories.isNullOrEmpty()) {
                 Toast.makeText(this, "Please enter the calories amount", Toast.LENGTH_SHORT).show()
             } else if (targetCalories.toInt() in 1000..3000) {
                 val mealsIntent = Intent(this, MainActivity::class.java)
                 mealsIntent.putExtra("targetCalories", targetCalories)
                 startActivity(mealsIntent)
-                btnGetMeals.isEnabled = false
+                binding.btnGetMeals.isEnabled = false
             } else {
                 Toast.makeText(
                     this,
