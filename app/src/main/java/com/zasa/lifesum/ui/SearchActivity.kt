@@ -1,11 +1,11 @@
-package com.zasa.newcaloriy.ui
+package com.zasa.lifesum.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.zasa.newcaloriy.R
-import com.zasa.newcaloriy.databinding.ActivitySearchBinding
+import com.zasa.lifesum.R
+import com.zasa.lifesum.databinding.ActivitySearchBinding
 
 
 class SearchActivity : AppCompatActivity() {

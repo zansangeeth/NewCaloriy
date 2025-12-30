@@ -1,13 +1,10 @@
-package com.zasa.newcaloriy.ui
+package com.zasa.lifesum.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
-import com.zasa.newcaloriy.R
-import com.zasa.newcaloriy.databinding.ActivitySearchBinding
-import com.zasa.newcaloriy.databinding.ActivityWebBinding
+import com.zasa.lifesum.R
+import com.zasa.lifesum.databinding.ActivityWebBinding
 
 class WebActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWebBinding

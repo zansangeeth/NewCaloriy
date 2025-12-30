@@ -1,4 +1,4 @@
-package com.zasa.newcaloriy.ui
+package com.zasa.lifesum.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -11,19 +11,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
-import com.zasa.newcaloriy.*
-import com.zasa.newcaloriy.adapter.MealsAdapter
-import com.zasa.newcaloriy.api.SpoonacularService
-import com.zasa.newcaloriy.databinding.ActivityMainBinding
-import com.zasa.newcaloriy.response.Meal
-import com.zasa.newcaloriy.response.SpoonacularData
-import com.zasa.newcaloriy.utils.Constants.API_KEY
-import com.zasa.newcaloriy.utils.RetrofitCall
+import com.zasa.lifesum.*
+import com.zasa.lifesum.adapter.MealsAdapter
+import com.zasa.lifesum.api.SpoonacularService
+import com.zasa.lifesum.databinding.ActivityMainBinding
+import com.zasa.lifesum.response.Meal
+import com.zasa.lifesum.response.SpoonacularData
+import com.zasa.lifesum.utils.Constants.API_KEY
+import com.zasa.lifesum.utils.RetrofitCall
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {

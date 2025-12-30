@@ -1,4 +1,4 @@
-package com.zasa.newcaloriy.utils
+package com.zasa.lifesum.utils
 
 /**
  **@Project -> NewCaloriy

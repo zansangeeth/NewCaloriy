@@ -1,4 +1,4 @@
-package com.zasa.newcaloriy.adapter
+package com.zasa.lifesum.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.zasa.newcaloriy.R
-import com.zasa.newcaloriy.response.Meal
-import com.zasa.newcaloriy.ui.WebActivity
+import com.zasa.lifesum.R
+import com.zasa.lifesum.response.Meal
+import com.zasa.lifesum.ui.WebActivity
 
 /**
  **@Project -> NewCaloriy

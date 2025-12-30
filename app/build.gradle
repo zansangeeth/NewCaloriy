@@ -6,12 +6,12 @@ plugins {
 //apply plugin: 'kotlin-android-extensions'
 
 android {
-    namespace "com.zasa.newcaloriy"
+    namespace "com.zasa.lifesum"
     compileSdk = 36
 
     defaultConfig {
-        applicationId "com.zasa.newcaloriy"
-        minSdk 36
+        applicationId "com.zasa.lifesum"
+        minSdk 35
         targetSdk 36
         versionCode 3
         versionName "1.0.2"
